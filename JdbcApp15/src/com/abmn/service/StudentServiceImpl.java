@@ -1,13 +1,16 @@
 package com.abmn.service;
 
+import com.abmn.dao.StudentDao;
 import com.abmn.dto.Student;
+import com.abmn.factory.StudentDaoFactory;
 
 public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public String addStudent(Student student) {
-		
-		return null;
+		StudentDao studentDao = StudentDaoFactory.getStudentDao();
+		String status = studentDao.add(student);
+		return status;
 	}
 
 	@Override

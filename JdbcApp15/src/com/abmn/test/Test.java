@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 import com.abmn.dto.Student;
+import com.abmn.factory.ConnectionFactory;
 import com.abmn.factory.StudentServiceFactory;
 import com.abmn.service.StudentService;
 
@@ -41,6 +42,7 @@ public class Test {
 				
 				StudentService = StudentServiceFactory.getStudentService();
 				status = StudentService.addStudent(student);
+				System.out.println(status);
 				
 				break;
 			case 2: 
@@ -51,6 +53,7 @@ public class Test {
 				break;
 			case 5: 
 				System.out.println("Thanks for using the APP");
+				ConnectionFactory.cleanUp();
 				System.exit(0);
 				break;
 			
